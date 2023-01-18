@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 public class Transferencia {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "trans_seq")  //¨¨¨¨¨´ 
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "trans_seq")  
 	@SequenceGenerator(name = "trans_seq", sequenceName = "trans_seq", allocationSize = 1)
 	@Column(name = "trans_id")
 	private Integer id;
@@ -85,9 +85,5 @@ public class Transferencia {
 	public void setComision(BigDecimal comision) {
 		this.comision = comision;
 	}
-	
-	
-	
-
 	
 }

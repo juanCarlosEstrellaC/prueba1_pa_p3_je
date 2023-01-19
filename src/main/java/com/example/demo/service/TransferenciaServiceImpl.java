@@ -44,7 +44,7 @@ public class TransferenciaServiceImpl implements ITransferenciaService {
 		//Destino:
 		CuentaBancaria destino = this.iCuentaBancariaRepository.buscar(numeroCuentaDestino);
 		
-		destino.setSaldo(destino.getSaldo().subtract(monto));
+		destino.setSaldo(destino.getSaldo().add(monto));
 
 		this.iCuentaBancariaRepository.actualizar(destino);	
 		

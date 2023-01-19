@@ -12,12 +12,12 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name ="transferencia")
+@Table(name ="transferencia_modif")
 public class Transferencia {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "trans_seq")  //¨¨¨¨¨´ 
-	@SequenceGenerator(name = "trans_seq", sequenceName = "trans_seq", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "trans_seq_modif")  //¨¨¨¨¨´ 
+	@SequenceGenerator(name = "trans_seq_modif", sequenceName = "trans_seq_modif", allocationSize = 1)
 	@Column(name = "trans_id")
 	private Integer id;
 	

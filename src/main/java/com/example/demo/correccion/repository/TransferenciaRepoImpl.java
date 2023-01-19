@@ -2,7 +2,7 @@ package com.example.demo.correccion.repository;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.modelo.Transferencia;
+import com.example.demo.correccion.modelo.Transferencia2;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
@@ -16,7 +16,7 @@ public class TransferenciaRepoImpl implements ITransferenciaRepo {
 	private EntityManager entityManager;
 	
 	@Override
-	public void insertar(Transferencia transferencia) {
+	public void insertar(Transferencia2 transferencia) {
 		this.entityManager.persist(transferencia);
 	}
 

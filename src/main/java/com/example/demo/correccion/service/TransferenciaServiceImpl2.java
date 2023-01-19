@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.correccion.modelo.Cuenta;
 import com.example.demo.correccion.repository.ICuentaRepo;
 import com.example.demo.correccion.repository.ITransferenciaRepo;
-import com.example.demo.modelo.Transferencia;
+import com.example.demo.correccion.modelo.Transferencia2;
 
 @Service
 public class TransferenciaServiceImpl2 implements ITransferenciaService2 {
@@ -19,6 +19,7 @@ public class TransferenciaServiceImpl2 implements ITransferenciaService2 {
 
 	@Autowired
 	private ITransferenciaRepo iTransferenciaRepo;
+	
 	@Override
 	public void realizar(String numeroOrigen, String numeroDestino, BigDecimal monto) {
 		// Origen:
@@ -42,12 +43,12 @@ public class TransferenciaServiceImpl2 implements ITransferenciaService2 {
 			this.cuentaRepo.actualizar(destino);
 			
 			// Transferencia:
-			Transferencia transfer = new Transferencia();
+			Transferencia2 transfer = new Transferencia2();
 			transfer.setComision(comision);
-			transfer.setFechaTransferencia(LocalDateTime.now());
+			transfer.setFecha(LocalDateTime.now());
 			transfer.setMonto(monto);
-			transfer.setCuentaOrigen(numeroOrigen);
-			transfer.setCuentaDestino(numeroDestino);
+			transfer.setNumeroOrigen(numeroOrigen);
+			transfer.setNumeroDestino(numeroDestino);
 			
 			this.iTransferenciaRepo.insertar(transfer);
 			
